@@ -9,4 +9,4 @@ int* finalPrices(int* prices, int pricesSize, int* returnSize) {
 }
 *returnSize = priceSize;
 return prices;
-}s
+}
