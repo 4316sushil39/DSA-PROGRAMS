@@ -62,6 +62,11 @@ int main()
     }
         break;
     case 2:
+if(isEmpty())
+    printf(" Queue Underflow!!!\n");
+    else{
+        printf("%d dequeue from the queue\n",dequeue());
+    }
         break;
     case 3:
 if(isEmpty())
