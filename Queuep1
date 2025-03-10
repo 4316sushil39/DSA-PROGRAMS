@@ -19,6 +19,13 @@ void enqueue(int data)
 }
 int dequeue()
 {
+int data = queue[front];
+    if(front == rear){
+        front=rear=-1;
+        else
+        front++;
+        return data;
+    }
 }
 int peek()
 {
