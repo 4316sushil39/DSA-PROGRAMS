@@ -29,9 +29,14 @@ int data = queue[front];
 }
 int peek()
 {
+return queue[front];
 }
 int display()
 {
+printf("queue elements are :");
+    for(int i=0; i<=rear; i++){
+        printf("%d", queue[i]);
+    }
 }
 int main()
 {
