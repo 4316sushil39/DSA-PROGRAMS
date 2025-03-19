@@ -1,0 +1,80 @@
+// Lab exp-7:
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node // typedef to define something in node.
+{
+    int data;
+    struct Node *next;
+} Node;
+Node* head = NULL; // VALUE of ist node = null i.e linked list empty
+Node* createNode(int ele){
+    Node* newNode = (Node*)malloc(size of(Node));
+    newNode->data = ele; // =ele = (value of (int data) at line no. 10)
+    newNode->next = NULL; // adress  = NULL
+    return newNode;
+}
+void insertNodeInBeg(int ele){
+    Node* newNode = createNode(ele); // store address of node in newNode
+    newNode->next = head; // adress of node assigned in newNode
+    head = newNode;
+    printf("Node Inserted!!!!\n");
+}
+void display(){
+    if(head == NULL){
+        printf("Linked list is empty!!!!\n");
+        else{
+            Node* temp = head;
+            while(temp != NULL){
+                printf("%d ", temp->data);
+                temp = temp->next;
+
+        }
+    }
+}
+}
+int main()
+{
+    while (1)
+    {
+        printf("--------Singly Linked list--------\n");
+        printf("1. Insert node in beginning\n");
+        printf("2. Insert  node at end\n");
+        printf("3. Insert node at any position\n");
+        printf("4. Delete node from beginning\n");
+        printf("5. Delete node from end\n");
+        printf("6. Delete node from any position\n");
+        printf("7. Search node in linked list\n");
+        printf("8. sort elements\n");
+        printf("9. Display list\n");
+        printf("Exit\n");
+        int choice;
+        printf("Enter choice :");
+        scanf("%d", &choice); 
+        switch (choice)
+        {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
+            break;
+        case 8:
+            break;
+        case 9:
+            break;
+        case 10:
+            exit(0);
+        default:
+            printf("Invalid choice\n");
+        }
+    }
+}
