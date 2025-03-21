@@ -35,6 +35,23 @@ void insertNodeAtEnd(int ele){
 void InsertNodeAtAnyPosition(int ele,int pos){
     if(head == NULL){
         printf("List is empty!!!!\n");
+        else if(pos==1)
+        insertNodeInBegining(ele);
+        else{
+            Node* temp = head;
+            int count = 1; // i.e i=1
+            while(count < pos-1 && temp->next != NULL){ // traverse to node before insertion
+                temp = temp->next;
+                i++;
+            }
+            if(temp->next != NULL && i>1){
+                Node *newNode = createNode(ele);
+                newNode->next = temp->next;
+                temp->next = newNode;
+                printf("Node inserted\n");
+                elseprintf("Invalid position!!!!\n");
+                }
+            }
     }
 
 }
@@ -63,7 +80,7 @@ int main(){
         printf("8. Sort Element\n");
         printf("9. Display List\n");
         printf("10. Exit\n");
-        int Choice,value;
+        int Choice,value,pos;
         printf("Enter Choice :");
         scanf("%d", &Choice);
         switch(Choice){
@@ -73,8 +90,14 @@ int main(){
             insertNodeInBegining(value);
             break;
             case 2:
+            printf("Enter value :");
+            scanf("%d", &value);
+            insertNodeAtEnd(value);
             break;
             case 3:
+            printf("Enter value :");
+            scanf("%d", &value);
+            InsertNodeAtAnyPosition(value,pos);
             break;
             case 4:
             break;
@@ -99,3 +122,4 @@ int main(){
     }
     return 0;
 }
+//next = address
