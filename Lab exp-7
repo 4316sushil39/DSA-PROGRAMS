@@ -1,80 +1,101 @@
-// Lab exp-7:
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct node // typedef to define something in node.
-{
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct Node{
     int data;
     struct Node *next;
-} Node;
-Node* head = NULL; // VALUE of ist node = null i.e linked list empty
+}Node;
+Node* head = NULL;
 Node* createNode(int ele){
-    Node* newNode = (Node*)malloc(size of(Node));
-    newNode->data = ele; // =ele = (value of (int data) at line no. 10)
-    newNode->next = NULL; // adress  = NULL
+    Node *newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = ele;
+    newNode->next = NULL;
     return newNode;
 }
-void insertNodeInBeg(int ele){
-    Node* newNode = createNode(ele); // store address of node in newNode
-    newNode->next = head; // adress of node assigned in newNode
-    head = newNode;
-    printf("Node Inserted!!!!\n");
-}
-void display(){
-    if(head == NULL){
-        printf("Linked list is empty!!!!\n");
-        else{
-            Node* temp = head;
-            while(temp != NULL){
-                printf("%d ", temp->data);
-                temp = temp->next;
 
+void insertNodeInBegining(int ele){
+    Node *newNode = createNode(ele);
+    newNode->next = head;
+    head = newNode;
+    printf("Node Inserted !!!!\n");
+}
+void insertNodeAtEnd(int ele){
+    Node *newNode = createNode(ele); // insert node at last of list
+    if(head == NULL){ // if list is empty
+        head = newNode;
         }
+        else{
+            Node *temp = head; // last node to head
+            while(temp->next != NULL){ // temp = address of nodes..
+                temp = temp->next; // insert adress of next node 
+            }
+            temp->next = newNode;
+            printf("Node inserted!!!!\n");
+}
+}
+void InsertNodeAtAnyPosition(int ele,int pos){
+    if(head == NULL){
+        printf("List is empty!!!!\n");
     }
+
 }
+
+void display(){
+    if(head==NULL)
+    printf("Linked List is Empty !!!\n");
+    else{
+        Node* temp = head;
+    while(temp != NULL){
+      printf("%d", temp->data);
+      temp = temp->next;
+    }   
+ }
 }
-int main()
-{
-    while (1)
-    {
-        printf("--------Singly Linked list--------\n");
-        printf("1. Insert node in beginning\n");
-        printf("2. Insert  node at end\n");
-        printf("3. Insert node at any position\n");
-        printf("4. Delete node from beginning\n");
-        printf("5. Delete node from end\n");
-        printf("6. Delete node from any position\n");
-        printf("7. Search node in linked list\n");
-        printf("8. sort elements\n");
-        printf("9. Display list\n");
-        printf("Exit\n");
-        int choice;
-        printf("Enter choice :");
-        scanf("%d", &choice); 
-        switch (choice)
-        {
-        case 1:
+int main(){
+    while(1){
+        printf("------- Singly Linked List -----\n");
+        printf("1. Insert Node In Begining\n");
+        printf("2. Insert Node At End\n");
+        printf("3. Insert Node At Any Position\n");
+        printf("4. Delete Node From Begining\n");
+        printf("5. Delete Node From End\n");
+        printf("6. Delete Node From Any Position\n");
+        printf("7. Search Element In List\n");
+        printf("8. Sort Element\n");
+        printf("9. Display List\n");
+        printf("10. Exit\n");
+        int Choice,value;
+        printf("Enter Choice :");
+        scanf("%d", &Choice);
+        switch(Choice){
+            case 1: 
+            printf("Enter value :");
+            scanf("%d", &value);
+            insertNodeInBegining(value);
             break;
-        case 2:
+            case 2:
             break;
-        case 3:
+            case 3:
             break;
-        case 4:
+            case 4:
             break;
-        case 5:
+            case 5:
             break;
-        case 6:
+            case 6:
             break;
-        case 7:
+            case 7:
             break;
-        case 8:
+            case 8:
             break;
-        case 9:
+            case 9:
+            display();
             break;
-        case 10:
+            case 10:
             exit(0);
-        default:
-            printf("Invalid choice\n");
+            break;
+            default:
+            printf("Invalid Choice !!!!\n");
         }
+        system("pause");
     }
+    return 0;
 }
