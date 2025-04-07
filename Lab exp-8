@@ -1,0 +1,119 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+struct Node* head = NULL;
+struct Node* createNode(int ele){
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = ele;
+    temp->next = temp->prev = NULL;
+    return temp;
+}
+void insertNodeInBegining(int ele){
+    struct Node* newnode = createNode(element);
+        if(head==NULL)
+            head = newNode;
+            else{
+                newNode->next = head;
+                head->prev = newNode;
+                head = newNode;
+            }
+     printf("Node inserted!!!!\n");   
+    }
+void insertNodeAtEnd(int ele){
+
+
+}
+
+void InsertNodeAtAnyPosition(){
+
+
+}
+void deleteNodeFromBegining(){
+
+}
+void deleteElementFromEnd(){
+
+
+}
+void deleteElementFromAnyPosition(int pos)
+{
+
+}
+void  search(int target){
+
+}
+
+
+int main()
+{
+    while (1)
+    {
+        printf("------- Singly Linked List -----\n");
+        printf("1. Insert Node In Begining\n");
+        printf("2. Insert Node At End\n");
+        printf("3. Insert Node At Any Position\n");
+        printf("4. Delete Node From Begining\n");
+        printf("5. Delete Node From End\n");
+        printf("6. Delete Node From Any Position\n");
+        printf("7. Search Element In List\n");
+        printf("8. Sort Element\n");
+        printf("9. Display List\n");
+        printf("10. Exit\n");
+        int Choice, value, pos;
+        printf("Enter Choice :");
+        scanf("%d", &Choice);
+        switch (Choice)
+        {
+        case 1:
+        /*printf("Enter value :");
+        scanf("%d", &value);
+        insertNodeInBegining(value);
+        break;*/
+        case 2: /*
+         printf("Enter value :");
+         scanf("%d", &value);
+         insertNodeAtEnd(value);
+         break;*/
+        case 3: /*
+         printf("Enter value :");
+         scanf("%d", &value);
+         InsertNodeAtAnyPosition(value,pos);
+         break;*/
+        case 4:
+            // deleteNodeFromBegining();
+            break;
+        case 5:
+            // deleteElementFromEnd();
+            break;
+        case 6:
+        /*printf("Enter position :");
+        scanf("%d", &pos);
+        deleteElementFromAnyPosition(pos);
+        break;*/
+        case 7: /*
+         printf("Enter value to search :");
+         scanf("%d", &value);
+         searchElement(value);*/
+            break;
+        case 8:
+            // sortElement();
+            break;
+        case 9:
+            // display();
+            break;
+        case 10:
+            // exit(0);
+            break;
+        default:
+            // printf("Invalid Choice !!!!\n");
+        }
+        system("pause");
+    }
+    return 0;
+}
+// next = address
