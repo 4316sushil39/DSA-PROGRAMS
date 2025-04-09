@@ -1,0 +1,205 @@
+#include <stdio.h>
+struct Node
+{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+struct Node *head = NULL;
+struct Node *createNode(int ele)
+{
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp->data = ele;
+    temp->next = NULL;
+    return temp;
+}
+void insertNodeinBeg(int ele)
+{
+    struct Node *newNode = createNode(ele);
+    if (head == NULL)
+        head = newNode;
+    else
+    {
+        newNode->next = head;
+        struct Node *temp = head;
+        while (temp->next != head)
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        head = newNode;
+    }
+    printf("Node inserted!!!!\n");
+}
+void insertNodeAtEnd(int ele)
+{
+    struct Node *newNode = createNode(ele);
+    if (head == NULL)
+    {
+        head = newNode;
+        head->next = head;
+    }
+    else
+    {
+        struct Node *temp = head;
+        while (temp->next != head)
+        {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        newNode->next = head;
+    }
+    printf("Node inserted at end!!!!\n");
+}
+void InsertNodeAtAnyPosition(int ele,int pos)
+{
+    if (head == NULL)
+    {
+        printf("List is empty!!!!\n");
+        else if (pos == 1)
+            deleteNodeFromBeg();
+        else
+        {
+            int i = 1;
+            Node *temp = head;
+            while (i < pos - 1 && temp->next != NULL)
+            {
+                i++;
+                temp = temp->next;
+            }
+            if (temp->next != NULL && pos > 0)
+            {
+                temp->next = temp->next->next;
+                free(t);
+                printf("Node deleted!!!\n");
+            }
+            else
+                printf("Invalid position!!!!\n");
+        }
+    }
+
+}
+void deleteNodeFromBegining()
+{
+
+}
+void deleteElementFromEnd()
+{
+}
+void deleteElementFromAnyPosition(int pos)
+{
+ if (head == NULL)
+    {
+        printf("List is empty!!!!\n");
+        else if (pos == 1)
+            deleteNodeFromBeg();
+        else
+        {
+            int i = 1;
+            Node *temp = head;
+            while (i < pos - 1 && temp->next != NULL)
+            {
+                i++;
+                temp = temp->next;
+            }
+            if (temp->next != NULL && pos > 0)
+            {
+                temp->next = temp->next->next;
+                free(t);
+                printf("Node deleted!!!\n");
+            }
+            else
+                printf("Invalid position!!!!\n");
+        }
+    }
+}
+void search(int target)
+{
+}
+void display()
+{
+    if (head == NULL)
+        printf("List is Empty!!!!\n");
+    else
+    {
+        struct Node *temp = head;
+        do
+        {
+            if (temp->data == target)
+            {
+                printf("found!!!!\n");
+                return;
+            }
+            temp = temp->next;
+        } while (temp != head);
+    }
+}
+int main()
+{
+    while (1)
+    {
+        printf("------- Circular singly Linked List -----\n");
+        printf("1. Insert Node In Begining\n");
+        printf("2. Insert Node At End\n");
+        printf("3. Insert Node At Any Position\n");
+        printf("4. Delete Node From Begining\n");
+        printf("5. Delete Node From End\n");
+        printf("6. Delete Node From Any Position\n");
+        printf("7. Search Element In List\n");
+        printf("8. Sort Element\n");
+        printf("8. Display List\n");
+        printf("9. Exit\n");
+        int Choice, value, pos;
+        printf("Enter Choice :");
+        scanf("%d", &Choice);
+        switch (Choice)
+        {
+        case 1:
+            printf("Enter value :");
+            scanf("%d", &value);
+            insertNodeInBegining(value);
+            break;
+        case 2:
+            printf("Enter value :");
+            scanf("%d", &value);
+            insertNodeAtEnd(value);
+            break;
+        case 3:
+            printf("Enter value :");
+            scanf("%d", &value);
+            InsertNodeAtAnyPosition(value, pos);
+            break;
+        */
+            case 4:
+            deleteNodeFromBegining();
+            break;
+        case 5:
+            deleteElementFromEnd();
+            break;
+        case 6:
+            printf("Enter position :");
+            scanf("%d", &pos);
+            deleteElementFromAnyPosition(pos);
+            break;
+        */
+            case 7:
+            printf("Enter value to search :");
+            scanf("%d", &value);
+            searchElement(value);
+            */
+                break;
+        case 8:
+            sortElement();
+            break;
+        case 9:
+            display();
+            break;
+        case 10:
+            exit(0);
+            break;
+        default:
+            printf("Invalid Choice !!!!\n");
+        }
+    }
+    return 0;
+}
