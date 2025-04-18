@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 100
+int tree [SIZE];
+
+void initialize (){
+    for(int i=0;i<SIZE;i++){
+    tree[i]=-1;
+    }
+}
+void insertInLeft(int value,int pos){ 
+    tree[2*pos +1]=val;
+
+}
+void insertInRight(int value,int pos){
+tree[2*pos+2]=val;
+}
+int main(){
+    tree[0]=40;
+    insertInLeft(70,0);
+    insertInRight(25,1);
+    insertInRight(50,0);
+    insertInLeft(20,3);
+    insertInRight(30,4);
+    insertInLeft(90,2);
+    return 0;
+}
+    
