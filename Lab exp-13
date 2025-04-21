@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 100
+int tree[SIZE];
+void init()
+{
+    for (int i = 0; i < SIZE; i++)
+    {
+        tree[i] = -1;
+    }
+}
+void insert(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("Enter the value of node :\n");
+
+        scanf("%d", &tree[i]);
+    }
+}
+void preorder(int root)
+{
+    if (tree[root] == -1)
+    {
+        return;
+        printf("%d", tree[root]); // root
+        preorder(2 * root + 1);   // left child
+        preorder(2 * root + 2);   // right child
+    }
+}
+void Inorder(int root)
+{
+    if (tree[root] == -1)
+    {
+        return;
+
+        Inorder(2 * root + 1);    // left child
+        printf("%d", tree[root]); // root
+        Inorder(2 * root + 2);    // right child
+    }
+}
+void Postorder(int root)
+{
+    if (tree[root] == -1)
+    {
+        return;
+
+        Postorder(2 * root + 1);  // left child
+        Postorder(2 * root + 2);  // right child
+        printf("%d", tree[root]); // root
+    }
+}
+
+int main()
+{
+    int n;
+    printf("Enter n:");
+    scanf("%d", &n);
+    init();
+    insert(n);
+    printf("\nPreorder : ");
+    preorder(0)
+    printf("\nPostorder : ");
+    Postorder(0);
+    printf("\nInorder :");
+    Inorder(0);
+    return 0;
+}
